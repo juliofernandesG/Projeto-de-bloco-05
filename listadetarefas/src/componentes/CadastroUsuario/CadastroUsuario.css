@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+    color: white;;
+}
+.main-cadastro-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #201b2c;
+}
+
+.left-cadastro-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+}
+
+.left-cadastro-usuario h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #3e8e41;
+}
+
+.left-cadastro-usuario img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.right-cadastro-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: #201b2c;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.card-cadastro-usuario {
+    width: 80%;
+    padding: 30px;
+    background: #42424279;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.text-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    background: #42424279;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+input {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    border-color: #4CAF50;
+    
+}
+
+.btn-cadastro-usuario {
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cadastro-usuario:hover {
+    background-color: #3e8e41;
+}
+
+.mensagem {
+    margin-top: 1rem;
+    color: #FF0000;
+}
+
+/* Tamanho de tela maior ou igual a 950px */
+@media screen and (min-width: 850px) {
+    .main-cadastro-usuario {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 100px;
+    }
+
+    .left-cadastro-usuario {
+        flex: 1;
+    }
+
+    .right-cadastro-usuario {
+        flex: 1;
+        padding-left: 50px;
+    }
+
+    .card-cadastro-usuario {
+        max-width: 400px;
+    }
+
+    .img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Tamanho de tela maior ou igual a 600px */
+@media screen and (max-width: 849px) and (min-width: 600px) {
+    .main-cadastro-usuario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .left-cadastro-usuario {
+        margin-bottom: 50px;
+    }
+
+    .right-cadastro-usuario {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Tamanho de tela menor que 600px */
+@media screen and (max-width: 599px) {
+    .main-cadastro-usuario {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-cadastro-usuario {
+        max-width: 100%;
+    }
+                .right-cadastro-usuario {
+                    width: 100%;
+                    max-width: 600px;
+                  
+                }
+                                .right-cadastro-usuario {
+                                    width: 100%;
+                                    max-width: 600px;
+                                }
+h1{
+    display: none;
+}
+    .img {
+        display: none;
+    }
+}
