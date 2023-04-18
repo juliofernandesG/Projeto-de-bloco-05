@@ -7,6 +7,15 @@ function CadastroUsuario() {
   const [senha, setSenha] = useState("");
   const [confirmaSenha, setConfirmaSenha] = useState("");
   const [mensagem, setMensagem] = useState("");
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    // Faz uma requisição HTTP para acessar o arquivo JSON com os dados dos usuários
+    fetch("/db.json")
+      .then((response) => response.json())
+      .then((data) => setUsuarios(data.nome))
+      .catch((error) => console.log(error));
+  }, []);
 
   const handleCadastroUsuario = (event) => {
     event.preventDefault();
@@ -21,6 +30,41 @@ function CadastroUsuario() {
       return;
     }
 
+    // Verifica se o email já está cadastrado
+    if (usuarios.find((user) => user.email === email)) {
+      setMensagem("Este email já está cadastrado. Por favor, tente novamente.");
+      return;
+    }
+
+    // Cria um novo objeto com os dados do usuário
+    const novoUsuario = {
+      nome,
+      email,
+      senha,
+    };
+
+    // Adiciona o novo usuário ao array de usuários
+    setUsuarios([...usuarios, novoUsuario]);
+
+    // Salva os dados no arquivo JSON
+    fetch("http://localhost:3000/db.json", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ usuarios: [...usuarios, novoUsuario] }),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setNome("");
+        setEmail("");
+        setSenha("");
+        setConfirmaSenha("");
+        setMensagem("Cadastro realizado com sucesso!");
+      })
+      .catch((error) => console.log(error));
+  };
+
     // Aqui você pode enviar os dados do usuário para um servidor ou para um banco de dados.
 
     setNome("");
@@ -28,8 +72,6 @@ function CadastroUsuario() {
     setSenha("");
     setConfirmaSenha("");
     setMensagem("Cadastro realizado com sucesso!");
-  };
-
   return (
     <div className="main-cadastro-usuario">
       <div className="left-cadastro-usuario">

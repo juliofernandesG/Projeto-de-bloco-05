@@ -11,7 +11,6 @@ function Login() {
     const nomeInput = document.querySelector("#usuario");
     const senhaInput = document.querySelector("#senha");
     const mensagemError = document.querySelector(".erro");
-    const submitButton = document.querySelector("#button");
 
     const nameInput = nomeInput.value;
     const passwordInput = senhaInput.value;
@@ -55,12 +54,13 @@ function Login() {
         <div className="card-login">
           <h1>Login</h1>
           <div className="text-field">
-            <label htmlFor="usuario">Usuario</label>
+            <label htmlFor="usuario" validar>Usuario</label>
             <input
               id="usuario"
               type="text"
               name="usuario"
               placeholder="usuario"
+            
             />
           </div>
 

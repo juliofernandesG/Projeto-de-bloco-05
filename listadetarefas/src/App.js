@@ -1,11 +1,11 @@
-import ListaTarefas from './componentes/ListaTarefa/ListaTarefa';
+import CadastroUsuario from './componentes/CadastroUsuario/CadastroUsuario'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
    
-<ListaTarefas/>
+<CadastroUsuario/>
       
     </div>
   );
